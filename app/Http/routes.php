@@ -15,8 +15,9 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
-$app->post('api/amigomedico/{dados}', ['as' => 'login', 'uses'=>'Login@aprovarConsulta']);
-$app->get('api/amigomedico/{id}', ['as' => 'agendas', 'uses'=>'AmController@getAgenda']);
+
+$app->post('/api/amigomedico/{dados}', ['as' => 'login', 'uses'=>'Login@aprovarConsulta']);
+$app->get('/api/amigomedico/{id}', ['as' => 'agendas', 'uses'=>'AmController@getAgenda']);
 $app->post('/api/amigomedico', ['as' => 'aprovarConsulta', 'uses'=>'AmController@aprovarConsulta']);
 
 	
