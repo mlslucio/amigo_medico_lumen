@@ -20,7 +20,7 @@ $app->get('/teste', function () use ($app) {
 });
 
 $app->post('/api/amigomedico/{dados}', ['as' => 'login', 'uses'=>'Login@aprovarConsulta']);
-$app->get('/amigomedico/{id}', ['as' => 'agendas', 'uses'=>'AmController@getAgenda']);
+$app->get('/api/amigomedico/{id}', ['as' => 'agendas', 'uses'=>'AmController@getAgenda']);
 $app->post('/api/amigomedico', ['as' => 'aprovarConsulta', 'uses'=>'AmController@aprovarConsulta']);
 
 	
