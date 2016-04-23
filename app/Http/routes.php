@@ -23,6 +23,8 @@ $app->post('/api/amigomedico/{dados}', ['as' => 'login', 'uses'=>'Login@aprovarC
 $app->get('/api/amigomedico/{id}', ['as' => 'agendas', 'uses'=>'AmController@getAgenda']);
 $app->post('/api/amigomedico', ['as' => 'aprovarConsulta', 'uses'=>'AmController@aprovarConsulta']);
 
+
+
 	
 	
 
