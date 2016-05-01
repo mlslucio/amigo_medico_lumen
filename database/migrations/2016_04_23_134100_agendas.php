@@ -34,6 +34,6 @@ class Agendas extends Migration
      */
     public function down()
     {
-        $Schema::drop('agendas');
+        Schema::drop('agendas');
     }
 }

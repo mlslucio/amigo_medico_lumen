@@ -9,6 +9,13 @@
 
 		}
 
+		
+		//retorna todas as consultas do médico com status pendente
+		public function getConsultas($id){
+
+		}
+
+
 		//retorna todas as agendas do médico
 		public function aprovarConsulta($arrConsulta){
 

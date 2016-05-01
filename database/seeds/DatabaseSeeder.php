@@ -20,5 +20,12 @@ class DatabaseSeeder extends Seeder
 			'saldo_empenhado'=> str_random(10),
 			'clinica_id'=> str_random(10),
         ]);
+
+          DB::user('agendas')->insert([
+			'email'=> 'mauro@mauro',
+			'password_hash'=> bcrypt(123),
+			'tipo'=> 'M',
+		
+        ]);
     }
 }

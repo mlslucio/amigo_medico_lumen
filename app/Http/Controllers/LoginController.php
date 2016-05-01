@@ -1,30 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Usuario;
+use App\User;
+
 
 class LoginController extends Controller{
 
 	private $usuario;
 
-	function __construct(Usuario $usuario){
+	function __construct(User $usuario){
 
 		$this->usuario = $usuario;
 
 	}
 	
 	//valida o login no app
-	public function autenticar($arrDados){
-
-		$status = $this->usuario->autenticar($arrDados);
-
-		if ($satus) {
-			# code...
-		}else{
-			
-		}
+	public function autenticar($dados){
 		
+		parse_str($dados, $arr);
 
+		$dadosUser = $this->usuario->autenticar($arr);
+
+		if(!empty($dadosUser))
+			return '1';
+		else
+			return '0';
+	
 	}
 
 	

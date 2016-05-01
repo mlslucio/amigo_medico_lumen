@@ -19,9 +19,12 @@ class AmController extends Controller{
 	//retorna todas as agendas do médico
 	public function getAgenda($id){
 
-		//exit($id);
+		dd($this->agenda->getAgendas($id));
 
-		$this->agenda->getAgendas($id));
+	}
+
+	//retorna todas as consultas do médico com status pendente
+	public function getConsultas($id){
 
 	}
 
