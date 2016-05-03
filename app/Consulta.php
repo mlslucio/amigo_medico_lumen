@@ -13,6 +13,9 @@
 		//retorna todas as consultas do médico com status pendente
 		public function getConsultas($id){
 
+			$agendas = \DB::select("select * from consultas where medico_id = ?", [$id]);
+			return $consultas;
+
 		}
 
 

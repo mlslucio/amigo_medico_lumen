@@ -15,8 +15,9 @@ class LoginController extends Controller{
 	}
 	
 	//valida o login no app
-	public function autenticar($dados){
+	public function autenticar(){
 		
+		dd("teste");
 		parse_str($dados, $arr);
 
 		$dadosUser = $this->usuario->autenticar($arr);

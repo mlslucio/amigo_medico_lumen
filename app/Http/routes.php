@@ -15,15 +15,13 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
-$app->get('/teste', function () use ($app) {
-    return "ola";
-});
 
 $app->group(['prefix' => 'api/amigomedico', 'namespace' => 'App\Http\Controllers'], function ($app) {
 	
-	$app->post('/login/{dados}', ['as' => 'login', 'uses'=>'LoginController@autenticar']);
+	$app->post('/login', ['as' => 'login', 'uses'=>'LoginController@autenticar']);
 	$app->get('/{id}', ['as' => 'agendas', 'uses'=>'AmController@getAgenda']);
 	$app->post('/', ['as' => 'aprovarConsulta', 'uses'=>'AmController@aprovarConsulta']);
+	$app->get('consultas/{id}', ['as' => 'consultas', 'uses'=>'AmController@getConsultas']);
 
 
 
