@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\Model;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -59,3 +59,4 @@ class DatabaseSeeder extends Seeder
 
     }
 }
+''
