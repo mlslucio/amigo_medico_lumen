@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
 			'clinica_id'=> str_random(10),
         ]);
 
-          DB::table('agendas')->insert([
+        DB::table('agendas')->insert([
             'data_emissao'=> str_random(10),
             'dia_semana'=> str_random(10),
             'saldo'=> str_random(10),
@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
 			'tipo'=> 'M',
         ]);
 
-          DB::table('consultas')->insert([
+        DB::table('consultas')->insert([
             'medico_id'=>1,
             'instituicao'=> 'apae',
             'paciente'=> 'teste',
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
             'hora'=>'12:00'
         ]);
 
-          DB::table('consultas')->insert([
+        DB::table('consultas')->insert([
             'medico_id'=>1,
             'instituicao'=> 'apae',
             'paciente'=> 'teste 2',
