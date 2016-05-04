@@ -24,10 +24,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 	
 		public static function auth($login, $senha){
 
-			$dadosUser = \DB::select("select * from user where email = ? and password_hash = ?", [$login,$senha]);
+			$dadosUser = \DB::select("select * from user where email = ? and password_hash = ?", [$login,app('hash')->make($senha)]);
 			
 			return $dadosUser;
-
 
 		}
 

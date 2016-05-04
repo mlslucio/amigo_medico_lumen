@@ -12,19 +12,21 @@ class AmController extends Controller{
 	function __construct(Agenda $agenda, Consulta $consulta){
 
 		$this->agenda = $agenda;
-		$this->$consulta = $consulta;
+		$this->consulta = $consulta;
 
 	}
 	
 	//retorna todas as agendas do médico
 	public function getAgenda($id){
 
-		dd($this->agenda->getAgendas($id));
+		exit(json_encode($this->agenda->getAgendas($id)));
 
 	}
 
 	//retorna todas as consultas do médico com status pendente
 	public function getConsultas($id){
+
+		exit(json_encode($this->consulta->getConsultas($id)));
 
 	}
 
