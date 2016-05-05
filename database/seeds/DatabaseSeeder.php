@@ -12,14 +12,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call('UsersTableSeeder');
-         DB::table('agendas')->insert([
+         /*DB::table('agendas')->insert([
 			'data_emissao'=> str_random(10),
 			'dia_semana'=> str_random(10),
 			'saldo'=> str_random(10),
 			'quantidade'=> str_random(10),
 			'saldo_empenhado'=> str_random(10),
 			'clinica_id'=> str_random(10),
-        ]);
+        ]); */
 
         DB::table('agendas')->insert([
             'data_emissao'=> str_random(10),
@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
 			'tipo'=> 'M',
         ]);
 
-        DB::table('consultas')->insert([
+        /*DB::table('consultas')->insert([
             'medico_id'=>1,
             'instituicao'=> 'apae',
             'paciente'=> 'teste',
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
             'descricao'=> 'atendimento teste',
             'data'=> '03/05/16',
             'hora'=>'12:00'
-        ]);
+        ]); */
 
 
     }

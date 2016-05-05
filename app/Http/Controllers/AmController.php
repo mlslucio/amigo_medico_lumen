@@ -31,9 +31,10 @@ class AmController extends Controller{
 	}
 
 	//salva consulta do medico(aprovada ou reprovada)
-	public function aprovarConsulta($arrConsulta){
+	public function aprovarConsulta(){
 
-		dd($this->consulta->aprovarConsulta($arrConsulta));
+		$params = json_decode(file_get_contents('php://input'),true);
+		dd($this->consulta->aprovarConsulta($params));
 
 	}
 }

@@ -17,9 +17,9 @@ class LoginController extends Controller{
 	//valida o login no app
 	public function autenticar(){
 		
-		parse_str($dados, $arr);
-
-		$dadosUser = $this->usuario->autenticar($arr);
+		$params = json_decode(file_get_contents('php://input'),true);
+	
+		$dadosUser = $this->usuario->autenticar($params["login"], $params["senha"]);
 
 		if(!empty($dadosUser))
 			return '1';

@@ -15,14 +15,15 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     use Authenticatable, Authorizable;
 
       //valida o login no app
-		public function autenticar($arr){
+		public function autenticar($login, $senha){
 
-			return $this->auth($arr["login"], $arr["senha"]);
+			return $this->auth($login, $senha);
 
 		}
 
 	
 		public static function auth($login, $senha){
+
 
 			$dadosUser = \DB::select("select * from user where email = ? and password_hash = ?", [$login,app('hash')->make($senha)]);
 			
