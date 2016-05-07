@@ -11,9 +11,11 @@
 		}
 
 		//retorna todas as agendas do médico
-		public function getAgendas($id){
+		public function getAgendas($token){
 
-			$agendas = \DB::select("select * from agendas where id = ?", [$id]);
+			$id = \DB::select("select id from user where token = ?", [$token]); 	
+			$agendas = \DB::select("select * from agendas where medico_id = ?", [$id[0]->id]);
+			
 			return $agendas;
 
 		}

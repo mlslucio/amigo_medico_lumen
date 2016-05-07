@@ -17,16 +17,31 @@ class AmController extends Controller{
 	}
 	
 	//retorna todas as agendas do médico
-	public function getAgenda($id){
+	public function getAgenda(){
 
-		exit(json_encode($this->agenda->getAgendas($id)));
+		$token = $_SERVER["HTTP_TOKEN"];
+		$agenda = $this->agenda->getAgendas($token);
+
+		if (!empty($agenda)) {
+			return $agenda;
+		}else{
+			return "Nenhuma agenda encontrada.";
+		}
+
 
 	}
 
-	//retorna todas as consultas do médico com status pendente
-	public function getConsultas($id){
+	//retorna todas as consultas do médicotoken com status pendente
+	public function getConsultas(){
 
-		exit(json_encode($this->consulta->getConsultas($id)));
+		$token = $_SERVER["HTTP_TOKEN"];
+		$consultas =  $this->consulta->getConsultas($token);		
+
+		if (!empty($consultas)) {
+			return $consultas;
+		}else{
+			return "Nenhuma consulta encontrada.";
+		}
 
 	}
 
