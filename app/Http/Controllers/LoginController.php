@@ -27,7 +27,7 @@ class LoginController extends Controller{
 			$this->usuario->guardarToken($dadosUser[0]->id, $token);
 			
 			$arrDadosUser[0] = $token;
-			$arrDadosUser[1] = $dadosUser[0]->email;s
+			$arrDadosUser[1] = $dadosUser[0]->email;
 
 			return json_encode($arrDadosUser);
 		
